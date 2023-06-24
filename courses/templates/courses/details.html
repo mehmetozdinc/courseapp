@@ -5,19 +5,16 @@
 {% endblock %}
 
 
-
 {% block content %}
     <div class="container mt-3">
         <div class="row">
-            <div class="col-3">
-                <!--menu-->
-               {% include 'courses/partials/_categories.html' %}
-             
+            <div class="col-4">
+                <img class="img-fluid rounded" src="{% static 'courses/img/'|add:course.imageUrl %}" alt="{{ course.title }}">
+                
             </div>
-            <div class="col-9">
-                {% for course in courses %}                                  
-                    {% include 'courses/partials/_course.html' %}                   
-                {% endfor %}
+            <div class="col-8">
+                <h1 class="h3">{{ course.title }}</h1>
+                <p>{{ course.description }}</p>
                 
 
             </div>
@@ -27,7 +24,7 @@
 {% endblock %}
 
 {% block baslik %}
-    Kurslar
+    {{ course.title }}
 {% endblock baslik %}
 
 {% block js_files %}
